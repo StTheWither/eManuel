@@ -181,4 +181,44 @@
     right: 0;
     border-right-color: var(--border);
   }
+
+  .header{
+    background-color: rgb(34, 139, 34);
+    
+  }
+  .bt1{
+    color:rgb(34, 139, 34);
+    background-color: white;
+    font-family: sans-serif;
+    /* left right props*/
+  }
+  .bt2{
+    color:rgb(34, 139, 34);
+    background-color: white;
+    font-family: sans-serif;
+    /* left right props*/
+  }
+  .bt3{
+    color:rgb(34, 139, 34);
+    background-color: white;
+    font-family: sans-serif;
+    /* left right props*/
+  }
+  .bt4{
+    color:rgb(34, 139, 34);
+    background-color: white;
+    font-family: sans-serif;
+    /* left right props*/
+  }
+
+  .loginbut{
+    color: black;
+    background-color: rgb(240, 255, 255);
+  }
+
+  button.hover{
+    cursor: pointer;
+
+  }
 }
+
