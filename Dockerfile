@@ -1,16 +1,22 @@
+# 1. Използваме SDK за компилиране
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+
+# Копираме проекта и теглим пакетите
+COPY ["EduCrave.csproj", "./"]
+RUN dotnet restore "./EduCrave.csproj"
+
+# Копираме останалото и правим Publish
+COPY . .
+RUN dotnet publish "EduCrave.csproj" -c Release -o /app/publish
+
+# 2. Използваме лек Runtime за стартиране
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
+COPY --from=build /app/publish .
 
-# Копиране на файловете и възстановяване на пакетите
-COPY *.csproj ./
-RUN dotnet restore
+# Render автоматично подава порт през променливата PORT
+ENV ASPNETCORE_URLS=http://+:8080
+EXPOSE 8080
 
-# Компилиране на приложението
-COPY . ./
-RUN dotnet publish -c Release -o out
-
-# Финално изображение
-FROM mcr.microsoft.com/dotnet/aspnet:8.0
-WORKDIR /app
-COPY --from=build /app/out .
-ENTRYPOINT ["dotnet", "YourProjectName.dll"]
+ENTRYPOINT ["dotnet", "EduCrave.dll"]
