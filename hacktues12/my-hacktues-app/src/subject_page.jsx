@@ -143,7 +143,6 @@ function subjectAPP(){
         return(
                 <div id='prog'>
                     <img src='pp.png' width='30' />
-                        
                         {message}
 
                 </div>
