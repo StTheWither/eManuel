@@ -60,12 +60,12 @@ function App() {
   }
 
   return (
-    <>
+    <div>
       
               
       <navBar/>
       
-    </>
+    </div>
   )
 }
 

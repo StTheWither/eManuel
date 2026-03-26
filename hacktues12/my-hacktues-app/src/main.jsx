@@ -4,6 +4,9 @@ import './index.css'
 import App from './App.jsx'
 import AuthPage from './log_in_page.jsx'
 import SubscriptionApp from './subscription_page.jsx'
+import subjectAPP from './subject_page.jsx'
+
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
