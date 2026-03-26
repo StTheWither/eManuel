@@ -5,7 +5,7 @@ namespace SQLlibrary
 {
     public class CallingOrganizer
     {
-        public void RegisterUser(int Id, string FirstName, string LastName , string Email, string Password, string Role)
+        public void RegisterUser( string FirstName, string LastName , string Email, string Password, string Role)
         {
             using var db = new AppDbContext();
 
@@ -13,7 +13,7 @@ namespace SQLlibrary
 
             var person = new Person
             {
-                Id = Id,
+                Id = Guid.NewGuid(),
                 FirstName = FirstName,
                 LastName = LastName,
                 Email = Email,
