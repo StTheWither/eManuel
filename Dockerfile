@@ -6,6 +6,7 @@ COPY ["hacktues12/BackEnd/SQLlibrary/SQLlibrary.csproj", "SQLlibrary/"]
 RUN dotnet restore "minAPI/minAPI.csproj"
 
 COPY hacktues12/BackEnd/ .
+COPY hacktues12/my-hacktues-app/ .
 
 RUN dotnet publish "minAPI/minAPI.csproj" -c Release -o /app/publish
 
