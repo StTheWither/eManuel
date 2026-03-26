@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>React Basics</title>
+    <title>Site</title>
   </head>
   <body>
     <div class="js-container"></div>
@@ -13,11 +13,23 @@
     <script type="text/babel">
       
         function navBar(){
-            
+            return(
+              <div>
+                <img src="img1.png"/>
+                <button>Subjects</button>
+                <button>Teachers</button>
+                <button>Subscripton</button>
+                <button>Sign in</button>
+                </div>
+            );
         }
 
       function APP(){
-
+        return(
+          <>
+          <navBar />
+          </>
+      );
       }
 
       const container = document.querySelector('.js-container');
