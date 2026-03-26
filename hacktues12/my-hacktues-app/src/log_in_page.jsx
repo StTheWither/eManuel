@@ -4,20 +4,14 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './log_in_page.css'
 
-function NavBar() {
-  return (
-    <nav className="navbar">
-      <h2>EduPlatform</h2>
-    </nav>
-  )
-}
+
 
 function AuthPage() {
   const [isLogin, setIsLogin] = useState(true)
 
   return (
     <>
-      <NavBar />
+      <navBar />
 
       <div className="authContainer">
         <div className="authCard">

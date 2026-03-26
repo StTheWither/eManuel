@@ -4,14 +4,7 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './subscription_page.css'
 
-function NavBar() {
-  return (
-    <nav className="navbar">
-      <h2>EduPlatform</h2>
-      <button className="loginBtn">Login</button>
-    </nav>
-  )
-}
+
 
 function SubscriptionSection() {
   const [selectedPlan, setSelectedPlan] = useState(1)
@@ -59,7 +52,7 @@ function SubscriptionSection() {
 function SubscriptionApp() {
   return (
     <>
-      <NavBar />
+      <navBar />
       <SubscriptionSection />
     </>
   )
