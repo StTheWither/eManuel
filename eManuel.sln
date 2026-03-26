@@ -1,0 +1,39 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "hacktues12", "hacktues12", "{11432DD5-6975-5031-F51A-F3860CA48FF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BackEnd", "BackEnd", "{736CE598-2D42-3A3D-2559-958DCCAA2EBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "minAPI", "hacktues12\BackEnd\minAPI\minAPI.csproj", "{5C032931-AACE-75FE-71A2-C1F40B44C7CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLlibrary", "hacktues12\BackEnd\SQLlibrary\SQLlibrary.csproj", "{0E7E203F-9C3A-D5C8-4A23-8A4EC962F46D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C032931-AACE-75FE-71A2-C1F40B44C7CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C032931-AACE-75FE-71A2-C1F40B44C7CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C032931-AACE-75FE-71A2-C1F40B44C7CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C032931-AACE-75FE-71A2-C1F40B44C7CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E7E203F-9C3A-D5C8-4A23-8A4EC962F46D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E7E203F-9C3A-D5C8-4A23-8A4EC962F46D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E7E203F-9C3A-D5C8-4A23-8A4EC962F46D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E7E203F-9C3A-D5C8-4A23-8A4EC962F46D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{736CE598-2D42-3A3D-2559-958DCCAA2EBD} = {11432DD5-6975-5031-F51A-F3860CA48FF7}
+		{5C032931-AACE-75FE-71A2-C1F40B44C7CD} = {736CE598-2D42-3A3D-2559-958DCCAA2EBD}
+		{0E7E203F-9C3A-D5C8-4A23-8A4EC962F46D} = {736CE598-2D42-3A3D-2559-958DCCAA2EBD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F137D5CD-43BA-477C-BE40-2AAACD00B7E5}
+	EndGlobalSection
+EndGlobal
