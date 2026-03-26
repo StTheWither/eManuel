@@ -8,14 +8,23 @@ function App() {
   const [count, setCount] = useState(0)
 
 
-  function navBar(){
+  function loginPage(){
     return(
       <div>
-        <img src="img1.png"></img>
-        <button>Subjects</button>
-        <button>Teachers</button>
-         <button>Subscripton</button>
-        <button>Sign in</button>
+          <p>Want to join out cause</p>
+          <button className='loginbut'>LOGIN</button>
+      </div>
+    )
+  }
+
+  function navBar(){
+    return(
+      <div className="header">
+        <img src="img1.png" width="50"></img>
+        <button className='but1'>Subjects</button>
+        <button className='but2' >Teachers</button>
+         <button className='but3'>Subscripton</button>
+        <button className='but4' >Sign in</button>
       </div>
     )
   }
@@ -129,6 +138,7 @@ function App() {
       <section id="spacer"></section>
 
       <navBar/>
+      <loginPage/>
     </>
   )
 }
