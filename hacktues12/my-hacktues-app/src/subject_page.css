@@ -1,0 +1,20 @@
+.div1{
+    font-family: sans-serif;
+    text-align: center;
+}
+.div2{
+    font-family: sans-serif;
+    text-align: center;
+}
+
+button{
+    color:white;
+    background-color: rgb(34, 139, 34);
+}
+button.hover{
+    cursor: pointer;
+}
+button.active{
+    background-color: white;
+    color: rgb(34, 139, 34);
+}
