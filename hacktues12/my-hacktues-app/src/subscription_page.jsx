@@ -9,6 +9,17 @@ import './subscription_page.css'
 function SubscriptionSection() {
   const [selectedPlan, setSelectedPlan] = useState(1)
 
+  function navBar(){
+    return(
+      <div className="header">
+        <img src="img1.png" width="50"></img>
+        <button className='but1'  >Subjects</button>
+        <button className='but2' >Teachers</button>
+         <button className='but3'>Subscripton</button>
+        <button className='but4' >Sign in</button>
+      </div>
+    )
+  }
   const plans = {
     1: { label: "1 месец", price: "5€" },
     3: { label: "3 месеца", price: "10€" },
