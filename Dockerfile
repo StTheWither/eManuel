@@ -3,12 +3,12 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Копираме проекта и теглим пакетите
-COPY ["EduCrave.csproj", "./"]
-RUN dotnet restore "./EduCrave.csproj"
+COPY ["minAPI.csproj", "./"]
+RUN dotnet restore "./minAPI.csproj"
 
 # Копираме останалото и правим Publish
 COPY . .
-RUN dotnet publish "EduCrave.csproj" -c Release -o /app/publish
+RUN dotnet publish "minAPI.csproj" -c Release -o /app/publish
 
 # 2. Използваме лек Runtime за стартиране
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
