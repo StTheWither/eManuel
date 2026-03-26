@@ -5,25 +5,38 @@ namespace SQLlibrary
 {
     public class CallingOrganizer
     {
-        public void RegisterUser( string FirstName, string LastName , string Email, string Password, string Role)
+        public CallingOrganizer()
         {
-            using var db = new AppDbContext();
+            
+        }
 
-            db.Database.EnsureCreated();
-
-            var person = new Person
+        public bool RegisterUser(string FirstName, string LastName , string Email, string Password, string Role)
+        {
+            try
             {
-                Id = Guid.NewGuid(),
-                FirstName = FirstName,
-                LastName = LastName,
-                Email = Email,
-                Password = Password,
-                Role = Role
+                using var db = new AppDbContext();
 
-            };
+                db.Database.EnsureCreated();
 
-            db.People.Add(person);
-            db.SaveChanges();
+                var person = new Person
+                {
+                    Id = Guid.NewGuid(),
+                    FirstName = FirstName,
+                    LastName = LastName,
+                    Email = Email,
+                    Password = Password,
+                    Role = Role
+                };
+
+                db.People.Add(person);
+                db.SaveChanges();
+
+                return true;
+            }
+            catch (System.Exception)
+            {
+                return false;
+            }
         }
     }
 }
