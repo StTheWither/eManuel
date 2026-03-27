@@ -95,7 +95,53 @@ app.MapPost("/auth/register", (RegisterRequest req) =>
     });
 });
 
-//check for only-letters
+app.MapPost("/auth/login", (LoginRequest req) =>
+{
+    if (string.IsNullOrWhiteSpace(req.Email))
+    {
+        return Results.BadRequest(new LoginResponse
+        {
+            IsSuccessfulLogin = false,
+            Message = "Email is required"
+        });
+    }
+
+    if (string.IsNullOrWhiteSpace(req.Password))
+    {
+        return Results.BadRequest(new LoginResponse
+        {
+            IsSuccessfulLogin = false,
+            Message = "Password is required"
+        });
+    }
+
+    var loginChecker = new LoginChecker();
+    var result = loginChecker.LoginUser(req.Email, req.Password);
+
+    if (result == LoginResult.UserNotFound)
+    {
+        return Results.Ok(new LoginResponse
+        {
+            IsSuccessfulLogin = false,
+            Message = "User not found"
+        });
+    }
+
+    if (result == LoginResult.WrongPassword)
+    {
+        return Results.Ok(new LoginResponse
+        {
+            IsSuccessfulLogin = false,
+            Message = "Wrong password"
+        });
+    }
+
+    return Results.Ok(new LoginResponse
+    {
+        IsSuccessfulLogin = true,
+        Message = "Login successful"
+    });
+});
 
 
 
