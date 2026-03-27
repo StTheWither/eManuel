@@ -252,6 +252,45 @@ app.MapPost("/student/profile", (JsonElement req) =>
 //var person = db.People.FirstOrDefault(p => p.FirstName == firstName && p.LastName == lastName);
 //idto na lognat person e senderId-to
 //RecieverId-to spisyk ot pr teacher teacher Id-to
-//Student Endpoint analogicho na Teacher 
+app.MapPost("/message/send", (JsonElement req) =>
+{
+    try
+    {
+        string senderFirstName = req.GetProperty("senderFirstName").GetString() ?? "";
+        string senderLastName = req.GetProperty("senderLastName").GetString() ?? "";
+        string receiverIdText = req.GetProperty("receiverId").GetString() ?? "";
+        string text = req.GetProperty("text").GetString() ?? "";
 
+        if (!Guid.TryParse(receiverIdText, out Guid receiverId))
+        {
+            return Results.BadRequest(new
+            {
+                IsSuccessful = false,
+                Message = "Invalid receiver id"
+            });
+        }
+
+        var organizer = new MessageOrganizer();
+
+        var result = organizer.SendMessage(
+            senderFirstName,
+            senderLastName,
+            receiverId,
+            text
+        );
+
+        return Results.Ok(new
+        {
+            IsSuccessful = result,
+            Message = result ? "Message sent successfully" : "Message could not be sent"
+        });
+    }
+    catch (Exception ex)
+    {
+        return Results.Problem(
+            title: "Message send error",
+            detail: ex.Message
+        );
+    }
+});
 app.Run();

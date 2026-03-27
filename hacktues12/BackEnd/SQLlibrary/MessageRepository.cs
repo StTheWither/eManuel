@@ -22,7 +22,9 @@ namespace SQLlibrary
 
             db.Database.EnsureCreated();
 
-            return db.Messages.ToList();
+            return db.Messages
+                .OrderBy(m => m.SentAt)
+                .ToList();
         }
 
         public List<Message> GetMessagesForUser(Guid userId)
