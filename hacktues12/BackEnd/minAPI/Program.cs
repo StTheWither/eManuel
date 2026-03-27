@@ -6,6 +6,7 @@ using Microsoft.Data.Sqlite;
 using Microsoft.IdentityModel.Tokens;
 using minAPI.Models;
 using SQLlibrary;
+using SQLlibrary.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -63,10 +64,21 @@ app.MapPost("/auth/register", (RegisterRequest req) =>
      // );
 
 
-    //NE RABOTI(ZA MENTORA I KAT CQLO)
+    if (string.IsNullOrWhiteSpace(req.Firstname) || !req.Firstname.All(char.IsLetter))
+        return Results.BadRequest(new { Message = "Invalid first name" });
+        
+    if (string.IsNullOrWhiteSpace(req.Lastname) || !req.Lastname.All(char.IsLetter))
+        return Results.BadRequest(new { Message = "Invalid last name" });
 
+    if (string.IsNullOrWhiteSpace(req.Pass) || req.Pass.Length > 20)
+        return Results.BadRequest(new { Message = "Invalid password" });
 
-    // ✅ ако всичко е ок
+    if (string.IsNullOrWhiteSpace(req.Email) || !req.Email.Contains("@"))
+        return Results.BadRequest(new { Message = "Invalid email" });
+
+    if (req.PhoneNumber.All(char.IsDigit) && req.PhoneNumber.Length >= 8 && req.PhoneNumber.Length <= 15)
+        return Results.BadRequest(new { Message = "Invalid phone number" });
+
     var callingOrganizer = new CallingOrganizer();
     var result = callingOrganizer.RegisterUser(
         req.Firstname,
@@ -76,18 +88,6 @@ app.MapPost("/auth/register", (RegisterRequest req) =>
         req.PhoneNumber,
         req.Role
     );
-
-         // ✅ Firstname
-    if (string.IsNullOrWhiteSpace(req.Firstname) || !req.Firstname.All(char.IsLetter))
-        return Results.Ok(new RegisterResponse { IsSuccessfulRegistration = false });
-
-    // ✅ Password
-    if (string.IsNullOrWhiteSpace(req.Pass) || req.Pass.Length > 20)
-        return Results.Ok(new RegisterResponse { IsSuccessfulRegistration = false });
-
-    // ✅ Email
-    if (string.IsNullOrWhiteSpace(req.Email) || !req.Email.Contains("@"))
-        return Results.Ok(new RegisterResponse { IsSuccessfulRegistration = false });
 
     return Results.Ok(new RegisterResponse
     {

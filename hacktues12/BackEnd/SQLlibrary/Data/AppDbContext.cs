@@ -10,7 +10,7 @@ namespace SQLlibrary.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=.\\people2.db");
+            optionsBuilder.UseSqlite("Data Source=.\\people.db");
         }
     }
 }
