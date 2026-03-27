@@ -208,4 +208,50 @@ static bool IsValidTeachingMode(string teachingMode)
         || normalizedMode == "both";
 }
 
+app.MapPost("/student/profile", (JsonElement req) =>
+{
+    try
+    {
+        string subjects = req.GetProperty("subjects").GetString() ?? "";
+        string city = req.GetProperty("city").GetString() ?? "";
+        string preferredMode = req.GetProperty("preferredMode").GetString() ?? "";
+        string description = req.GetProperty("description").GetString() ?? "";
+        string freeTime = req.GetProperty("freeTime").GetString() ?? "";
+        string grades = req.GetProperty("grades").GetString() ?? "";
+        string firstName = req.GetProperty("firstName").GetString() ?? "";
+        string lastName = req.GetProperty("lastName").GetString() ?? "";
+
+        var studentOrganizer = new StudentProfileOrganizer();
+
+        var result = studentOrganizer.RegisterStudentProfile(
+            subjects,
+            city,
+            preferredMode,
+            description,
+            freeTime,
+            grades,
+            firstName,
+            lastName
+        );
+
+        return Results.Ok(new
+        {
+            IsSuccessful = result,
+            Message = "Student profile created successfully"
+        });
+    }
+    catch (Exception ex)
+    {
+        return Results.Problem(
+            title: "Student profile error",
+            detail: ex.Message
+        );
+    }
+});
+//Message Endpoint(SenderID=ot person tablicata i da e podobno)
+//var person = db.People.FirstOrDefault(p => p.FirstName == firstName && p.LastName == lastName);
+//idto na lognat person e senderId-to
+//RecieverId-to spisyk ot pr teacher teacher Id-to
+//Student Endpoint analogicho na Teacher 
+
 app.Run();
