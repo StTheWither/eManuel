@@ -70,3 +70,11 @@ function SubscriptionApp() {
 }
 
 export default SubscriptionApp
+
+
+
+createRoot(document.getElementById('root')).render(
+    <StrictMode>
+        <SubscriptionApp/>
+    </StrictMode>
+)

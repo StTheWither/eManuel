@@ -11,8 +11,5 @@ import subjectAPP from './subject_page.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-    <subjectApp/>
-    <AuthPage/>
-    <SubscriptionApp/>
   </StrictMode>,
 )

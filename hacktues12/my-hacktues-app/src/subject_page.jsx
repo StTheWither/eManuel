@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from './assets/vite.svg'
+import heroImg from './assets/hero.png'
 import './subject_page.css'
 
 function subjectAPP(){
@@ -161,3 +164,9 @@ function subjectAPP(){
 }
 
 export default subjectAPP
+
+createRoot(document.getElementById('root')).render(
+    <StrictMode>
+        <subjectAPP/>
+    </StrictMode>
+)
