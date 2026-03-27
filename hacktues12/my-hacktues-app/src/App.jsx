@@ -19,10 +19,7 @@ function NavBar(){
         <button className='but4' onClick={() => setPage("login") }>Log in</button>
 
 
-      {page === "mainpage" && <App/> }
-      {page === "login" && <AuthPage />}
-      {page === "subjects" && <SubjectApp />}
-      {page === "subscription" && <SubscriptionApp />}
+    
       </div>
     )
   }
@@ -75,9 +72,15 @@ function App() {
   
   return (
     <>
-             
-        <NavBar/>
-      
+        <>  
+        <NavBar setPage={setPage} />
+
+      {page === "mainpage" && <AppMainTxt />}
+      {page === "login" && <AuthPage />}
+      {page === "subjects" && <SubjectApp />}
+      {page === "subscription" && <SubscriptionApp />}
+        </>
+
         <AppMainTxt />
 
     </>
