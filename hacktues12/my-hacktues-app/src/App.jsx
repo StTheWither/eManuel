@@ -2,7 +2,28 @@ import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
+import AuthPage from "./log_in_page.jsx";
+import SubscriptionApp from "./subscription_page.jsx";
+import SubjectApp from "./subject_page.jsx";
 import './App.css'
+
+function navBar(){
+     const [page, setPage] = useState("login");
+    return(
+      <div className="header">
+        <img src="img1.png" width="50"></img>
+        <button className='but1' onClick={() => setPage("subjects")} >Subjects</button>
+        <button className='but2' >Teachers</button>
+         <button className='but3' onClick={() => setPage("subscription")}>Subscripton</button>
+        <button className='but4' onClick={() => setPage("login") }>Log in</button>
+
+         {page === "login" && <AuthPage />}
+      {page === "subjects" && <SubjectApp />}
+      {page === "subscription" && <SubscriptionApp />}
+      </div>
+    )
+  }
+
 
 function MyList() {
   const [items, setItems] = useState([]);
@@ -32,14 +53,6 @@ function App() {
   const apiUrl = process.env.REACT_APP_API_URL + "/api/items"; 
 
 
-  function loginPage(){
-    return(
-      <div>
-          <p>Want to join out cause</p>
-          <button className='loginbut'>LOGIN</button>
-      </div>
-    )
-  }
 
       function openSub(){
          window.location.href = 'subject_page.jsx';
@@ -47,18 +60,7 @@ function App() {
         
       }
 
-  function navBar(){
-    return(
-      <div className="header">
-        <img src="img1.png" width="50"></img>
-        <button className='but1' onClick={openSub} >Subjects</button>
-        <button className='but2' >Teachers</button>
-         <button className='but3'>Subscripton</button>
-        <button className='but4' >Sign in</button>
-      </div>
-    )
-  }
-
+  
   return (
     <div>
       

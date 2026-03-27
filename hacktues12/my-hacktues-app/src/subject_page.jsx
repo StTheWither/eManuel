@@ -165,8 +165,3 @@ function subjectAPP(){
 
 export default subjectAPP
 
-createRoot(document.getElementById('root')).render(
-    <StrictMode>
-        <subjectAPP/>
-    </StrictMode>
-)

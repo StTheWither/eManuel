@@ -5,11 +5,7 @@ import heroImg from './assets/hero.png'
 import './subscription_page.css'
 
 
-
-function SubscriptionSection() {
-  const [selectedPlan, setSelectedPlan] = useState(1)
-
-  function navBar(){
+function navBar(){
     return(
       <div className="header">
         <img src="img1.png" width="50"></img>
@@ -20,6 +16,11 @@ function SubscriptionSection() {
       </div>
     )
   }
+  
+
+function SubscriptionSection() {
+  const [selectedPlan, setSelectedPlan] = useState(1)
+
   const plans = {
     1: { label: "1 месец", price: "5€" },
     3: { label: "3 месеца", price: "10€" },
@@ -73,8 +74,3 @@ export default SubscriptionApp
 
 
 
-createRoot(document.getElementById('root')).render(
-    <StrictMode>
-        <SubscriptionApp/>
-    </StrictMode>
-)
