@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { createRoot } from 'react-dom/client'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
@@ -78,6 +79,3 @@ function SubscriptionApp() {
 }
 
 export default SubscriptionApp
-
-
-
