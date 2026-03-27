@@ -19,13 +19,15 @@ function NavBar(){
 
       
       {page === "login" && <AuthPage />}
-      {page === "subjects" && <SubjectApp />}
+      {page === "subjects" && <SubjectAPP />}
       {page === "subscription" && <SubscriptionApp />}
       </div>
     )
   }
 
-function subjectAPP(){
+function SubjectAPP(){
+
+    
 
     const ScrollToSection = (id) => {
   document.getElementById(id).scrollIntoView({
@@ -190,4 +192,4 @@ function subjectAPP(){
     )
 }
 
-export default subjectAPP
+export default SubjectAPP
