@@ -35,8 +35,9 @@ namespace SQLlibrary
 
                 return true;
             }
-            catch (System.Exception)
+            catch (System.Exception ex)
             {
+                System.Console.WriteLine(ex.Message);
                 return false;
             }
         }

@@ -6,6 +6,7 @@ using Microsoft.Data.Sqlite;
 using Microsoft.IdentityModel.Tokens;
 using minAPI.Models;
 using SQLlibrary;
+using SQLlibrary.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -52,6 +53,14 @@ app.UseStaticFiles(); // for serving uploaded images
 // POST /auth/register
 app.MapPost("/auth/register", (RegisterRequest req) =>
 {
+    static bool IsValidRole(string role)
+{
+    if (string.IsNullOrWhiteSpace(role))
+        return false;
+
+    string normalizedRole = role.Trim().ToLower();
+    return normalizedRole == "student" || normalizedRole == "teacher";
+}
 
     // var exists = (long)(checkCmd.ExecuteScalar() ?? 0L);
     // if (exists > 0)
@@ -63,10 +72,30 @@ app.MapPost("/auth/register", (RegisterRequest req) =>
      // );
 
 
-    //NE RABOTI(ZA MENTORA I KAT CQLO)
+    if (string.IsNullOrWhiteSpace(req.Firstname) || !req.Firstname.All(char.IsLetter))
+        return Results.BadRequest(new { Message = "Invalid first name" });
+        
+    if (string.IsNullOrWhiteSpace(req.Lastname) || !req.Lastname.All(char.IsLetter))
+        return Results.BadRequest(new { Message = "Invalid last name" });
 
+    if (string.IsNullOrWhiteSpace(req.Pass) || req.Pass.Length > 20)
+        return Results.BadRequest(new { Message = "Invalid password" });
 
-    // ✅ ако всичко е ок
+    if (string.IsNullOrWhiteSpace(req.Email) || !req.Email.Contains("@"))
+        return Results.BadRequest(new { Message = "Invalid email" });
+
+    if (req.PhoneNumber.All(char.IsDigit) && req.PhoneNumber.Length >= 8 && req.PhoneNumber.Length <= 15)
+        return Results.BadRequest(new { Message = "Invalid phone number" });
+
+    
+if (!IsValidRole(req.Role))
+{
+    return Results.BadRequest(new RegisterResponse
+    {
+        IsSuccessfulRegistration = false
+    });
+}
+    string normalizedRole = req.Role.Trim().ToLower();
     var callingOrganizer = new CallingOrganizer();
     var result = callingOrganizer.RegisterUser(
         req.Firstname,
@@ -74,20 +103,8 @@ app.MapPost("/auth/register", (RegisterRequest req) =>
         req.Email,
         req.Pass,
         req.PhoneNumber,
-        req.Role
+        normalizedRole
     );
-
-         // ✅ Firstname
-    if (string.IsNullOrWhiteSpace(req.Firstname) || !req.Firstname.All(char.IsLetter))
-        return Results.Ok(new RegisterResponse { IsSuccessfulRegistration = false });
-
-    // ✅ Password
-    if (string.IsNullOrWhiteSpace(req.Pass) || req.Pass.Length > 20)
-        return Results.Ok(new RegisterResponse { IsSuccessfulRegistration = false });
-
-    // ✅ Email
-    if (string.IsNullOrWhiteSpace(req.Email) || !req.Email.Contains("@"))
-        return Results.Ok(new RegisterResponse { IsSuccessfulRegistration = false });
 
     return Results.Ok(new RegisterResponse
     {
@@ -95,7 +112,53 @@ app.MapPost("/auth/register", (RegisterRequest req) =>
     });
 });
 
-//check for only-letters
+app.MapPost("/auth/login", (LoginRequest req) =>
+{
+    if (string.IsNullOrWhiteSpace(req.Email))
+    {
+        return Results.BadRequest(new LoginResponse
+        {
+            IsSuccessfulLogin = false,
+            Message = "Email is required"
+        });
+    }
+
+    if (string.IsNullOrWhiteSpace(req.Password))
+    {
+        return Results.BadRequest(new LoginResponse
+        {
+            IsSuccessfulLogin = false,
+            Message = "Password is required"
+        });
+    }
+
+    var loginChecker = new LoginChecker();
+    var result = loginChecker.LoginUser(req.Email, req.Password);
+
+    if (result == LoginResult.UserNotFound)
+    {
+        return Results.Ok(new LoginResponse
+        {
+            IsSuccessfulLogin = false,
+            Message = "User not found"
+        });
+    }
+
+    if (result == LoginResult.WrongPassword)
+    {
+        return Results.Ok(new LoginResponse
+        {
+            IsSuccessfulLogin = false,
+            Message = "Wrong password"
+        });
+    }
+
+    return Results.Ok(new LoginResponse
+    {
+        IsSuccessfulLogin = true,
+        Message = "Login successful"
+    });
+});
 
 
 
