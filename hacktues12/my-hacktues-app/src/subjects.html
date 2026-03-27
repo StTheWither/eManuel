@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Предмети - EduCrave</title>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <img src="logo.svg" alt="EduCrave" class="logo-img">
+                <span>EduCrave</span>
+            </div>
+            <div class="navbar-buttons">
+                <a href="login.html" class="nav-btn">Вход</a>
+                <a href="signup.html" class="nav-btn">Регистрация</a>
+                <a href="subscription.html" class="nav-btn">Абонамент</a>
+                <a href="home.html" class="nav-btn">Начало</a>
+                <a href="subjects.html" class="nav-btn active">Предмети</a>
+                <a href="teachers.html" class="nav-btn">Учители</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-container">
+        <!-- Animated background -->
+        <div class="animated-bg">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+
+        <!-- Header Section -->
+        <section class="page-header">
+            <h1>Всички предмети</h1>
+            <p>Открий хиляди курсове в различни категории</p>
+        </section>
+
+        <!-- Search and Filter -->
+        <section class="search-section">
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Потърси предмет..."
+                    class="search-input"
+                >
+                <span class="search-icon">🔍</span>
+            </div>
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Всички</button>
+                <button class="filter-btn" data-filter="science">Науки</button>
+                <button class="filter-btn" data-filter="math">Математика</button>
+                <button class="filter-btn" data-filter="language">Езици</button>
+                <button class="filter-btn" data-filter="art">Изкуство</button>
+            </div>
+        </section>
+
+        <!-- Subjects Grid -->
+        <section class="subjects-section">
+            <div class="subjects-grid">
+                <!-- Mathematics -->
+                <div class="subject-card" data-category="math">
+                    <div class="subject-icon">📐</div>
+                    <h3>Математика</h3>
+                    <p class="subject-count">45 курса</p>
+                    <ul class="subject-topics">
+                        <li>Алгебра</li>
+                        <li>Геометрия</li>
+                        <li>Тригонометрия</li>
+                        <li>Статистика</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Разгледай</a>
+                </div>
+
+                <!-- Science -->
+                <div class="subject-card" data-category="science">
+                    <div class="subject-icon">🧪</div>
+                    <h3>Химия</h3>
+                    <p class="subject-count">32 курса</p>
+                    <ul class="subject-topics">
+                        <li>Органична химия</li>
+                        <li>Неорганична химия</li>
+                        <li>Физична химия</li>
+                        <li>Биохимия</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Разгледай</a>
+                </div>
+
+                <!-- Science -->
+                <div class="subject-card" data-category="science">
+                    <div class="subject-icon">🧬</div>
+                    <h3>Биология</h3>
+                    <p class="subject-count">38 курса</p>
+                    <ul class="subject-topics">
+                        <li>Молекулярна биология</li>
+                        <li>Еволюция</li>
+                        <li>Екология</li>
+                        <li>Микробиология</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Разгледай</a>
+                </div>
+
+                <!-- Language -->
+                <div class="subject-card" data-category="language">
+                    <div class="subject-icon">🌍</div>
+                    <h3>Английски език</h3>
+                    <p class="subject-count">52 курса</p>
+                    <ul class="subject-topics">
+                        <li>Граматика</li>
+                        <li>Разговори</li>
+                        <li>Писане</li>
+                        <li>IELTS準備</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Разгледай</a>
+                </div>
+
+                <!-- Science -->
+                <div class="subject-card" data-category="science">
+                    <div class="subject-icon">🌍</div>
+                    <h3>География</h3>
+                    <p class="subject-count">28 курса</p>
+                    <ul class="subject-topics">
+                        <li>Физическа география</li>
+                        <li>Човешка география</li>
+                        <li>Геология</li>
+                        <li>Метеорология</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Разгледай</a>
+                </div>
+
+                <!-- Art -->
+                <div class="subject-card" data-category="art">
+                    <div class="subject-icon">🎨</div>
+                    <h3>Изобразително изкуство</h3>
+                    <p class="subject-count">41 курса</p>
+                    <ul class="subject-topics">
+                        <li>Рисуване</li>
+                        <li>Живопис</li>
+                        <li>Скулптура</li>
+                        <li>Дизайн</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Разгледай</a>
+                </div>
+
+                <!-- History -->
+                <div class="subject-card" data-category="history">
+                    <div class="subject-icon">📚</div>
+                    <h3>История</h3>
+                    <p class="subject-count">35 курса</p>
+                    <ul class="subject-topics">
+                        <li>Древна история</li>
+                        <li>Средновековна история</li>
+                        <li>Съвременна история</li>
+                        <li>Археология</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Разгледай</a>
+                </div>
+
+                <!-- Language -->
+                <div class="subject-card" data-category="language">
+                    <div class="subject-icon">🗣️</div>
+                    <h3>Немски език</h3>
+                    <p class="subject-count">38 курса</p>
+                    <ul class="subject-topics">
+                        <li>Разговорен немски</li>
+                        <li>Бизнес немски</li>
+                        <li>Граматика</li>
+                        <li>Культура</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Разгледай</a>
+                </div>
+
+                <!-- Math -->
+                <div class="subject-card" data-category="math">
+                    <div class="subject-icon">🔬</div>
+                    <h3>Физика</h3>
+                    <p class="subject-count">29 курса</p>
+                    <ul class="subject-topics">
+                        <li>Механика</li>
+                        <li>Термодинамика</li>
+                        <li>Електромагнетизъм</li>
+                        <li>Квантова механика</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Разгледай</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="navbar.js"></script>
+    <script src="subjects.js"></script>
+</body>
+</html>

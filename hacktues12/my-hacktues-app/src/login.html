@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход - EduCrave</title>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <img src="logo.svg" alt="EduCrave" class="logo-img">
+                <span>EduCrave</span>
+            </div>
+            <div class="navbar-buttons">
+                <a href="login.html" class="nav-btn active">Вход</a>
+                <a href="signup.html" class="nav-btn">Регистрация</a>
+                <a href="subscription.html" class="nav-btn">Абонамент</a>
+                <a href="home.html" class="nav-btn">Начало</a>
+                <a href="subjects.html" class="nav-btn">Предмети</a>
+                <a href="teachers.html" class="nav-btn">Учители</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="auth-container login-page">
+        <!-- Animated background -->
+        <div class="animated-bg">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+
+        <div class="auth-box">
+            <!-- Header -->
+            <div class="auth-header">
+                <div class="logo">📚</div>
+                <h1>Добре дошли</h1>
+                <p>Вход в твоя акаунт на EduCrave</p>
+            </div>
+
+            <!-- Form -->
+            <form class="auth-form" id="loginForm">
+                <!-- Email Input -->
+                <div class="form-group">
+                    <label for="email">Имейл</label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email"
+                            placeholder="your@email.com"
+                            required
+                        >
+                        <span class="input-icon">✉️</span>
+                    </div>
+                </div>
+
+                <!-- Password Input -->
+                <div class="form-group">
+                    <label for="password">Парола</label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password"
+                            placeholder="••••••••"
+                            required
+                        >
+                        <span class="input-icon">🔒</span>
+                    </div>
+                </div>
+
+                <!-- Remember Me -->
+                <div class="form-options">
+                    <label class="checkbox">
+                        <input type="checkbox" name="remember">
+                        <span>Запомни ме</span>
+                    </label>
+                    <a href="#" class="forgot-password">Забравена парола?</a>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary" id="loginBtn">
+                    <span>Вход</span>
+                    <span class="btn-icon">→</span>
+                </button>
+            </form>
+
+            <!-- Sign Up Link -->
+            <p class="auth-footer">
+                Нямаш акаунт? 
+                <a href="signup.html">Регистрирай се</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="api.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

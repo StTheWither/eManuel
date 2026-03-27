@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация - EduCrave</title>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <img src="logo.svg" alt="EduCrave" class="logo-img">
+                <span>EduCrave</span>
+            </div>
+            <div class="navbar-buttons">
+                <a href="login.html" class="nav-btn">Вход</a>
+                <a href="signup.html" class="nav-btn active">Регистрация</a>
+                <a href="subscription.html" class="nav-btn">Абонамент</a>
+                <a href="home.html" class="nav-btn">Начало</a>
+                <a href="subjects.html" class="nav-btn">Предмети</a>
+                <a href="teachers.html" class="nav-btn">Учители</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="auth-container signup-page">
+        <!-- Animated background -->
+        <div class="animated-bg">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+
+        <div class="auth-box auth-box-large">
+            <!-- Header -->
+            <div class="auth-header">
+                <div class="logo">🌱</div>
+                <h1>Присъединяй се</h1>
+                <p>Почни своя пътеводител на учене</p>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <!-- Form -->
+            <form class="auth-form" id="signupForm">
+                <!-- First Name -->
+                <div class="form-group">
+                    <label for="firstname">Име</label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="text" 
+                            id="firstname" 
+                            name="firstname"
+                            placeholder="Иван"
+                            required
+                        >
+                        <span class="input-icon">👤</span>
+                    </div>
+                </div>
+
+                <!-- Last Name -->
+                <div class="form-group">
+                    <label for="lastname">Фамилия</label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="text" 
+                            id="lastname" 
+                            name="lastname"
+                            placeholder="Петров"
+                            required
+                        >
+                        <span class="input-icon">👤</span>
+                    </div>
+                </div>
+
+                <!-- Email Input -->
+                <div class="form-group">
+                    <label for="signup-email">Имейл</label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="email" 
+                            id="signup-email" 
+                            name="email"
+                            placeholder="your@email.com"
+                            required
+                        >
+                        <span class="input-icon">✉️</span>
+                    </div>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="form-group">
+                    <label for="phone">Телефонен номер</label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            name="phonenumber"
+                            placeholder="+359..."
+                            required
+                        >
+                        <span class="input-icon">📱</span>
+                    </div>
+                </div>
+
+                <!-- Password Input -->
+                <div class="form-group">
+                    <label for="signup-password">Парола</label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="password" 
+                            id="signup-password" 
+                            name="pass"
+                            placeholder="Минимум 8 символа"
+                            required
+                        >
+                        <span class="input-icon">🔒</span>
+                    </div>
+                    <div class="password-strength">
+                        <div class="strength-bar"></div>
+                        <span class="strength-text">Слаба</span>
+                    </div>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="form-group">
+                    <label for="confirm-password">Потвърди парола</label>
+                    <div class="input-wrapper">
+                        <input 
+                            type="password" 
+                            id="confirm-password" 
+                            name="confirm-password"
+                            placeholder="Потвърди паролата"
+                            required
+                        >
+                        <span class="input-icon">✓</span>
+                    </div>
+                </div>
+
+                <!-- Role Selection -->
+                <div class="form-group">
+                    <label for="role">Роля</label>
+                    <select id="role" name="role" required class="form-select">
+                        <option value="student" selected>Студент</option>
+                        <option value="teacher">Учител</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary" id="signupBtn">
+                    <span>Регистрирай се</span>
+                    <span class="btn-icon">→</span>
+                </button>
+            </form>
+
+            <!-- Sign In Link -->
+            <p class="auth-footer">
+                Вече имаш акаунт? 
+                <a href="login.html">Влез</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="api.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

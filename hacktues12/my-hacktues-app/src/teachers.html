@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учители - EduCrave</title>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <img src="logo.svg" alt="EduCrave" class="logo-img">
+                <span>EduCrave</span>
+            </div>
+            <div class="navbar-buttons">
+                <a href="login.html" class="nav-btn">Вход</a>
+                <a href="signup.html" class="nav-btn">Регистрация</a>
+                <a href="subscription.html" class="nav-btn">Абонамент</a>
+                <a href="home.html" class="nav-btn">Начало</a>
+                <a href="subjects.html" class="nav-btn">Предмети</a>
+                <a href="teachers.html" class="nav-btn active">Учители</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-container">
+        <!-- Animated background -->
+        <div class="animated-bg">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+
+        <!-- Header Section -->
+        <section class="page-header">
+            <h1>Наши учители</h1>
+            <p>Научи се от експертите в техните области</p>
+        </section>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="searchTeachers" 
+                    placeholder="Потърси учител..."
+                    class="search-input"
+                >
+                <span class="search-icon">🔍</span>
+            </div>
+        </section>
+
+        <!-- Teachers Grid -->
+        <section class="teachers-section">
+            <div class="teachers-grid">
+                <!-- Teacher 1 -->
+                <div class="teacher-card">
+                    <div class="teacher-avatar">👨‍🏫</div>
+                    <h3>Иван Петров</h3>
+                    <p class="teacher-subject">Математика</p>
+                    <p class="teacher-bio">Магистър по математика със 10 години преподавателски опит</p>
+                    <div class="teacher-stats">
+                        <div class="stat">
+                            <span class="stat-value">2,450</span>
+                            <span class="stat-label">Студенти</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">4.9★</span>
+                            <span class="stat-label">Рейтинг</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">18</span>
+                            <span class="stat-label">Курсове</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Виж профила</a>
+                </div>
+
+                <!-- Teacher 2 -->
+                <div class="teacher-card">
+                    <div class="teacher-avatar">👩‍🏫</div>
+                    <h3>Мария Василева</h3>
+                    <p class="teacher-subject">Химия</p>
+                    <p class="teacher-bio">Докторат по химия и експерт в органична химия</p>
+                    <div class="teacher-stats">
+                        <div class="stat">
+                            <span class="stat-value">1,890</span>
+                            <span class="stat-label">Студенти</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">4.8★</span>
+                            <span class="stat-label">Рейтинг</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">15</span>
+                            <span class="stat-label">Курсове</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Виж профила</a>
+                </div>
+
+                <!-- Teacher 3 -->
+                <div class="teacher-card">
+                    <div class="teacher-avatar">👨‍🏫</div>
+                    <h3>Георги Стефанов</h3>
+                    <p class="teacher-subject">Биология</p>
+                    <p class="teacher-bio">Специалист по молекулярна биология и генетика</p>
+                    <div class="teacher-stats">
+                        <div class="stat">
+                            <span class="stat-value">2,100</span>
+                            <span class="stat-label">Студенти</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">4.7★</span>
+                            <span class="stat-label">Рейтинг</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">16</span>
+                            <span class="stat-label">Курсове</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Виж профила</a>
+                </div>
+
+                <!-- Teacher 4 -->
+                <div class="teacher-card">
+                    <div class="teacher-avatar">👩‍🏫</div>
+                    <h3>Ева Николова</h3>
+                    <p class="teacher-subject">География</p>
+                    <p class="teacher-bio">Магистър по география и лична преживелица на пътешествието</p>
+                    <div class="teacher-stats">
+                        <div class="stat">
+                            <span class="stat-value">1,650</span>
+                            <span class="stat-label">Студенти</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">4.9★</span>
+                            <span class="stat-label">Рейтинг</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">12</span>
+                            <span class="stat-label">Курсове</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Виж профила</a>
+                </div>
+
+                <!-- Teacher 5 -->
+                <div class="teacher-card">
+                    <div class="teacher-avatar">👨‍🏫</div>
+                    <h3>Никола Томов</h3>
+                    <p class="teacher-subject">История</p>
+                    <p class="teacher-bio">Историк с PhD и 15 години преподавателски опит</p>
+                    <div class="teacher-stats">
+                        <div class="stat">
+                            <span class="stat-value">1,980</span>
+                            <span class="stat-label">Студенти</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">4.8★</span>
+                            <span class="stat-label">Рейтинг</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">14</span>
+                            <span class="stat-label">Курсове</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Виж профила</a>
+                </div>
+
+                <!-- Teacher 6 -->
+                <div class="teacher-card">
+                    <div class="teacher-avatar">👩‍🏫</div>
+                    <h3>София Борисова</h3>
+                    <p class="teacher-subject">Изобразително изкуство</p>
+                    <p class="teacher-bio">Професионална художничка и дизайнерка</p>
+                    <div class="teacher-stats">
+                        <div class="stat">
+                            <span class="stat-value">1,420</span>
+                            <span class="stat-label">Студенти</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">4.9★</span>
+                            <span class="stat-label">Рейтинг</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">13</span>
+                            <span class="stat-label">Курсове</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Виж профила</a>
+                </div>
+
+                <!-- Teacher 7 -->
+                <div class="teacher-card">
+                    <div class="teacher-avatar">👨‍🏫</div>
+                    <h3>Александър Иванов</h3>
+                    <p class="teacher-subject">Физика</p>
+                    <p class="teacher-bio">Магистър по физика със специализация в квантова механика</p>
+                    <div class="teacher-stats">
+                        <div class="stat">
+                            <span class="stat-value">1,750</span>
+                            <span class="stat-label">Студенти</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">4.7★</span>
+                            <span class="stat-label">Рейтинг</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">11</span>
+                            <span class="stat-label">Курсове</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Виж профила</a>
+                </div>
+
+                <!-- Teacher 8 -->
+                <div class="teacher-card">
+                    <div class="teacher-avatar">👩‍🏫</div>
+                    <h3>Елизабета Кръстева</h3>
+                    <p class="teacher-subject">Английски език</p>
+                    <p class="teacher-bio">Лингвист с опит в преподаване на английски език</p>
+                    <div class="teacher-stats">
+                        <div class="stat">
+                            <span class="stat-value">2,320</span>
+                            <span class="stat-label">Студенти</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">4.9★</span>
+                            <span class="stat-label">Рейтинг</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">20</span>
+                            <span class="stat-label">Курсове</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Виж профила</a>
+                </div>
+
+                <!-- Teacher 9 -->
+                <div class="teacher-card">
+                    <div class="teacher-avatar">👨‍🏫</div>
+                    <h3>Петър Войводов</h3>
+                    <p class="teacher-subject">Немски език</p>
+                    <p class="teacher-bio">Родител немски говорител със 12 години преподавателски опит</p>
+                    <div class="teacher-stats">
+                        <div class="stat">
+                            <span class="stat-value">1,560</span>
+                            <span class="stat-label">Студенти</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">4.8★</span>
+                            <span class="stat-label">Рейтинг</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">16</span>
+                            <span class="stat-label">Курсове</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-secondary">Виж профила</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="navbar.js"></script>
+    <script src="teachers.js"></script>
+</body>
+</html>
