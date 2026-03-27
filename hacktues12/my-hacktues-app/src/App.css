@@ -12,20 +12,29 @@
      padding: 10px 20px;
     background-color: rgb(34, 139, 34);
     
+    
+  }
+  .btm{
+    color:rgb(34, 139, 34);
+    background-color: white;
+    font-family: sans-serif;
+    border: none;
+   left:15%;
   }
   .bt1{
     color:rgb(34, 139, 34);
     background-color: white;
     font-family: sans-serif;
     border: none;
-    /* left right props*/
+   left:20%;
+
   }
   .bt2{
     color:rgb(34, 139, 34);
     background-color: white;
     font-family: sans-serif;
     border: none;
-    /* left right props*/
+    left:25%;
   }
   .bt3{
     color:rgb(34, 139, 34);

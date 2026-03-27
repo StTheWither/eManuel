@@ -75,12 +75,10 @@ function App() {
   
   return (
     <>
-    <div>         
-      <NavBar/>
-      </div>
-      <div>
+             
+        <NavBar/>
+      
         <AppMainTxt />
-      </div>
 
     </>
   )
