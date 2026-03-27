@@ -21,3 +21,9 @@ public class RegisterResponse
     public bool IsSuccessfulRegistration { get; set; } = false;
 
 }
+
+public class LoginResponse
+{
+    public bool IsSuccessfulLogin { get; set; } = false;
+    public string Message { get; set; } = "";
+}
