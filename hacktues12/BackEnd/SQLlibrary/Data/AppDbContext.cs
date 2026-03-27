@@ -8,6 +8,8 @@ namespace SQLlibrary.Data
         public DbSet<Person> People { get; set; }
         public DbSet<Message> Messages { get; set; }
 
+        public DbSet<TeacherProfiles> TeacherProfiles { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data Source=.\\people2.db");
