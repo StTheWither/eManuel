@@ -2,11 +2,11 @@ namespace SQLlibrary.Entities
 {
     public class Message
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
-        public int SenderId { get; set; }
+        public Guid  SenderId { get; set; }
 
-        public int ReceiverId { get; set; }
+        public Guid ReceiverId { get; set; }
 
         public string Text { get; set; } = "";
 
