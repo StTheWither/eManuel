@@ -6,7 +6,11 @@ using Microsoft.Data.Sqlite;
 using Microsoft.IdentityModel.Tokens;
 using minAPI.Models;
 using SQLlibrary;
+using SQLlibrary.Data;
 using SQLlibrary.Entities;
+using System;
+using System.Linq;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -84,7 +88,7 @@ app.MapPost("/auth/register", (RegisterRequest req) =>
     if (string.IsNullOrWhiteSpace(req.Email) || !req.Email.Contains("@"))
         return Results.BadRequest(new { Message = "Invalid email" });
 
-    if (req.PhoneNumber.All(char.IsDigit) && req.PhoneNumber.Length >= 8 && req.PhoneNumber.Length <= 15)
+    if (!req.PhoneNumber.All(char.IsDigit) || req.PhoneNumber.Length < 8 || req.PhoneNumber.Length > 15)
         return Results.BadRequest(new { Message = "Invalid phone number" });
 
     
@@ -160,6 +164,48 @@ app.MapPost("/auth/login", (LoginRequest req) =>
     });
 });
 
+app.MapPost("/teacher/profile", (JsonElement req) =>
+{
+    try
+    {
+        // string teacherIdText = req.GetProperty("teacherId").GetString() ?? "";
+        string subject = req.GetProperty("subject").GetString() ?? "";
+        string city = req.GetProperty("city").GetString() ?? "";
+        string teachingMode = req.GetProperty("teachingMode").GetString() ?? "";
+        string description = req.GetProperty("description").GetString() ?? "";
+        string grades = req.GetProperty("grades").GetString() ?? "";
+        decimal pricePerHour = req.GetProperty("pricePerHour").GetDecimal();
+        string firstName = req.GetProperty("firstName").GetString() ?? "";
+        string lastName = req.GetProperty("lastName").GetString() ?? "";
 
+        var teacherOrganizer = new TeacherProfileOrganizer();
+        var result = teacherOrganizer.RegisterTeacherProfile(subject, city, teachingMode, description, pricePerHour, grades, firstName, lastName);
+
+        return Results.Ok(new
+        {
+            IsSuccessful = result,
+            Message = "Teacher profile created successfully"
+        });
+    }
+    catch (Exception ex)
+    {
+        return Results.Problem(
+            title: "Teacher profile error",
+            detail: ex.Message
+        );
+    }
+});
+
+static bool IsValidTeachingMode(string teachingMode)
+{
+    if (string.IsNullOrWhiteSpace(teachingMode))
+        return false;
+
+    string normalizedMode = teachingMode.Trim().ToLower();
+
+    return normalizedMode == "online"
+        || normalizedMode == "in-person"
+        || normalizedMode == "both";
+}
 
 app.Run();

@@ -10,11 +10,6 @@ namespace SQLlibrary.Data
 
         public DbSet<TeacherProfiles> TeacherProfiles { get; set; }
 
-        public DbSet<StudentProfiles> StudentProfiles { get; set; }
-        public DbSet<TeacherClasses> TeacherClasses { get; set; }
-
-        public DbSet<ClassEnrollments> ClassEnrollments { get; set; }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data Source=.\\people.db");
