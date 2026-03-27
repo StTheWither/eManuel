@@ -53,6 +53,14 @@ app.UseStaticFiles(); // for serving uploaded images
 // POST /auth/register
 app.MapPost("/auth/register", (RegisterRequest req) =>
 {
+    static bool IsValidRole(string role)
+{
+    if (string.IsNullOrWhiteSpace(role))
+        return false;
+
+    string normalizedRole = role.Trim().ToLower();
+    return normalizedRole == "student" || normalizedRole == "teacher";
+}
 
     // var exists = (long)(checkCmd.ExecuteScalar() ?? 0L);
     // if (exists > 0)
@@ -79,6 +87,15 @@ app.MapPost("/auth/register", (RegisterRequest req) =>
     if (req.PhoneNumber.All(char.IsDigit) && req.PhoneNumber.Length >= 8 && req.PhoneNumber.Length <= 15)
         return Results.BadRequest(new { Message = "Invalid phone number" });
 
+    
+if (!IsValidRole(req.Role))
+{
+    return Results.BadRequest(new RegisterResponse
+    {
+        IsSuccessfulRegistration = false
+    });
+}
+    string normalizedRole = req.Role.Trim().ToLower();
     var callingOrganizer = new CallingOrganizer();
     var result = callingOrganizer.RegisterUser(
         req.Firstname,
@@ -86,7 +103,7 @@ app.MapPost("/auth/register", (RegisterRequest req) =>
         req.Email,
         req.Pass,
         req.PhoneNumber,
-        req.Role
+        normalizedRole
     );
 
     return Results.Ok(new RegisterResponse
