@@ -4,38 +4,55 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './subject_page.css'
 
+function NavBar(){
+     const [page, setPage] = useState("login");
+    return(
+      <div className="header">
+        <img src="img1.png" width="50"></img>
+        <button className='but1' onClick={() => setPage("subjects")} >Subjects</button>
+        <button className='but2' >Teachers</button>
+         <button className='but3' onClick={() => setPage("subscription")}>Subscripton</button>
+        <button className='but4' onClick={() => setPage("login") }>Log in</button>
+
+         {page === "login" && <AuthPage />}
+      {page === "subjects" && <SubjectApp />}
+      {page === "subscription" && <SubscriptionApp />}
+      </div>
+    )
+  }
+
 function subjectAPP(){
 
-    const scrollToSection = (id) => {
+    const ScrollToSection = (id) => {
   document.getElementById(id).scrollIntoView({
     behavior: "smooth"
   });
 };
-    function generalSubjects(){
+    function GeneralSubjects(){
         return(
             <div>
                 <div className='div1'>Основни предмети</div>
-                <button className="b1" onClick={() => scrollToSection("eng")}>Английски език</button>
-                <button className="b2" onClick={() => scrollToSection("math")}>Математика</button>
-                <button className="b3"onClick={() => scrollToSection("bul")}>Български</button>
-                <button className="b4" onClick={() => scrollToSection("his")}>История</button>
-                <button className="b5" onClick={() => scrollToSection("che")}>Химия</button>
-                <button className="b6" onClick={() => scrollToSection("geo")}>География</button>
-                <button className="b7"onClick={() => scrollToSection("fiz")}>Физика</button>
+                <button className="b1" onClick={() => ScrollToSection("eng")}>Английски език</button>
+                <button className="b2" onClick={() => ScrollToSection("math")}>Математика</button>
+                <button className="b3"onClick={() => ScrollToSection("bul")}>Български</button>
+                <button className="b4" onClick={() => ScrollToSection("his")}>История</button>
+                <button className="b5" onClick={() => ScrollToSection("che")}>Химия</button>
+                <button className="b6" onClick={() => ScrollToSection("geo")}>География</button>
+                <button className="b7"onClick={() => ScrollToSection("fiz")}>Физика</button>
             </div>
         )
     }
-    function secandorySubjects(){
+    function SecandorySubjects(){
         return(
             <div>
                 <div className='div2'>Специализирани предмети</div>
-                <button className="b9" onClick={() => scrollToSection("prog")}>Програмиране</button>
-                <button className="b10" onClick={() => scrollToSection("bis")}>Предприемачество и Бизнес</button>
+                <button className="b9" onClick={() => ScrollToSection("prog")}>Програмиране</button>
+                <button className="b10" onClick={() => ScrollToSection("bis")}>Предприемачество и Бизнес</button>
             </div>
         )
-    }
+    
 
-    function engTxt( {message} ){
+    function EngTxt( {message} ){
         
         return(
                 <div id='eng'>
@@ -47,12 +64,11 @@ function subjectAPP(){
 
         
     }
-    function matTxt( {message} ){
+    function MatTxt( {message} ){
         
         return(
                 <div id='math'>
-                    <img src='pp.png' width='30' />
-                        {message}
+                    
 
                 </div>
         )
@@ -60,7 +76,7 @@ function subjectAPP(){
         
     }
 
-    function bulTxt( {message} ){
+    function BulTxt( {message} ){
         
         return(
                 <div id='bul'>
@@ -73,7 +89,7 @@ function subjectAPP(){
         
     }
 
-    function hisTxt( {message} ){
+    function HisTxt( {message} ){
         
         return(
                 <div id='his'>
@@ -86,7 +102,7 @@ function subjectAPP(){
         
     }
 
-    function cheTxt( {message} ){
+    function CheTxt( {message} ){
         
         return(
                 <div id='che'>
@@ -99,7 +115,7 @@ function subjectAPP(){
         
     }
 
-    function geoTxt( {message} ){
+    function GeoTxt( {message} ){
         
         return(
                 <div id='geo'>
@@ -112,7 +128,7 @@ function subjectAPP(){
 
         
     }
-    function fizTxt( {message} ){
+    function FizTxt( {message} ){
         
         return(
                 <div id='fiz'>
@@ -125,7 +141,7 @@ function subjectAPP(){
 
         
     }
-    function bisTxt( {message} ){
+    function BisTxt( {message} ){
         
         return(
                 <div id='bis'>
@@ -138,7 +154,7 @@ function subjectAPP(){
 
         
     }
-    function progTxt( {message} ){
+    function ProgTxt( {message} ){
         
         return(
                 <div id='prog'>
@@ -151,15 +167,22 @@ function subjectAPP(){
         
     }
 
+    }
 
 
 
     return(
+        <>
             <>
-            <navBar />
-            <generalSubjects />
-            <secandorySubjects />
+                <NavBar />
             </>
+            <>
+                <GeneralSubjects />
+            </>
+            <>
+                <SecandorySubjects />
+            </>
+        </>
     )
 }
 

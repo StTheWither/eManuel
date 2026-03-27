@@ -1,16 +1,12 @@
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #0f172a;
-  color: white;
-}
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  background: #1e293b;
-}
+
+
+ .header{
+     padding: 10px 20px;
+    
+    
+  }
+
 
 .loginBtn {
   background: #3b82f6;
@@ -37,24 +33,20 @@ body {
   padding: 10px 20px;
   border: none;
   border-radius: 8px;
-  background: #334155;
+  background-color: darkgreen;
   color: white;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.planSelector button:hover {
-  background: #475569;
-}
 
-.activePlan {
-  background: #22c55e !important;
-}
+
+
 
 .singleCard {
   margin: 40px auto;
-  background: #1e293b;
   padding: 30px;
+  background-color: darkgreen;
   border-radius: 15px;
   width: 300px;
   transition: 0.3s;

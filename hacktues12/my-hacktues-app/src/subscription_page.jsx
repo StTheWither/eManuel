@@ -5,7 +5,7 @@ import heroImg from './assets/hero.png'
 import './subscription_page.css'
 
 
-function navBar(){
+function NavBar(){
     return(
       <div className="header">
         <img src="img1.png" width="50"></img>
@@ -64,7 +64,7 @@ function SubscriptionSection() {
 function SubscriptionApp() {
   return (
     <>
-      <navBar />
+      <NavBar />
       <SubscriptionSection />
     </>
   )

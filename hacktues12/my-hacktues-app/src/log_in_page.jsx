@@ -11,7 +11,7 @@ function AuthPage() {
 
   return (
     <>
-      <navBar />
+      <NavBar />
 
       <div className="authContainer">
         <div className="authCard">

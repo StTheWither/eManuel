@@ -7,7 +7,7 @@ import SubscriptionApp from "./subscription_page.jsx";
 import SubjectApp from "./subject_page.jsx";
 import './App.css'
 
-function navBar(){
+function NavBar(){
      const [page, setPage] = useState("login");
     return(
       <div className="header">
@@ -62,10 +62,8 @@ function App() {
 
   
   return (
-    <div>
-      
-              
-      <navBar/>
+    <div className='.dival'>         
+      <NavBar/>
       
     </div>
   )
