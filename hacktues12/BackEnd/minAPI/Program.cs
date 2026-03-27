@@ -73,6 +73,7 @@ app.MapPost("/auth/register", (RegisterRequest req) =>
         req.Lastname,
         req.Email,
         req.Pass,
+        req.PhoneNumber,
         req.Role
     );
 

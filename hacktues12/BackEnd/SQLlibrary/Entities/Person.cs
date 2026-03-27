@@ -7,7 +7,7 @@ namespace SQLlibrary.Entities
 
         public string LastName { get; set; } = "";
 
-         public string Username => FirstName.Trim() + LastName.Trim();
+        public string Username { get; set; } = "";
 
         public string Email { get; set; } = "";
 

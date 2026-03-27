@@ -10,7 +10,7 @@ namespace SQLlibrary
             
         }
 
-        public bool RegisterUser(string FirstName, string LastName , string Username, string Email, string Password,string PhoneNumber, string Role)
+        public bool RegisterUser(string FirstName, string LastName, string Email, string Password,string PhoneNumber, string Role)
         {
             try
             {
@@ -23,7 +23,7 @@ namespace SQLlibrary
                     Id = Guid.NewGuid(),
                     FirstName = FirstName,
                     LastName = LastName,
-                    Usernname = Username,
+                    Username = FirstName.Trim() + LastName.Trim(),
                     Email = Email,
                     Password = Password,
                     PhoneNumber = PhoneNumber,
