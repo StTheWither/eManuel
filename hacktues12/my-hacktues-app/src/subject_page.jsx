@@ -5,16 +5,19 @@ import heroImg from './assets/hero.png'
 import './subject_page.css'
 
 function NavBar(){
-     const [page, setPage] = useState("login");
+     const [page, setPage] = useState("mainpage");
     return(
       <div className="header">
         <img src="img1.png" width="50"></img>
+        <button className='butm'onClick={() => setPage("mainpage")}>Main page</button>
         <button className='but1' onClick={() => setPage("subjects")} >Subjects</button>
         <button className='but2' >Teachers</button>
-         <button className='but3' onClick={() => setPage("subscription")}>Subscripton</button>
+        <button className='but3' onClick={() => setPage("subscription")}>Subscripton</button>
         <button className='but4' onClick={() => setPage("login") }>Log in</button>
 
-         {page === "login" && <AuthPage />}
+
+      
+      {page === "login" && <AuthPage />}
       {page === "subjects" && <SubjectApp />}
       {page === "subscription" && <SubscriptionApp />}
       </div>

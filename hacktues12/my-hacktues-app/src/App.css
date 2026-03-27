@@ -3,6 +3,11 @@
     background-color:white ;
   }
 
+    .maint{
+      background-color: white;
+      font-weight: 100;
+    }
+
   .header{
      padding: 10px 20px;
     background-color: rgb(34, 139, 34);

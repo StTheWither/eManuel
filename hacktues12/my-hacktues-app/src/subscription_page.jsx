@@ -6,13 +6,20 @@ import './subscription_page.css'
 
 
 function NavBar(){
+     const [page, setPage] = useState("subscription");
     return(
       <div className="header">
         <img src="img1.png" width="50"></img>
-        <button className='but1'  >Subjects</button>
+        <button className='butm'onClick={() => setPage("mainpage")}>Main page</button>
+        <button className='but1' onClick={() => setPage("subjects")} >Subjects</button>
         <button className='but2' >Teachers</button>
-         <button className='but3'>Subscripton</button>
-        <button className='but4' >Sign in</button>
+         <button className='but3' onClick={() => setPage("subscription")}>Subscripton</button>
+        <button className='but4' onClick={() => setPage("login") }>Log in</button>
+
+      {page === "mainpage" && <App/> }
+      {page === "login" && <AuthPage />}
+      {page === "subjects" && <SubjectApp />}
+      {page === "subscription" && <SubscriptionApp />}
       </div>
     )
   }

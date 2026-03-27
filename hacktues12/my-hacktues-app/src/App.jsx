@@ -8,22 +8,35 @@ import SubjectApp from "./subject_page.jsx";
 import './App.css'
 
 function NavBar(){
-     const [page, setPage] = useState("login");
+     const [page, setPage] = useState("mainpage");
     return(
       <div className="header">
         <img src="img1.png" width="50"></img>
+        <button className='butm'onClick={() => setPage("mainpage")}>Main page</button>
         <button className='but1' onClick={() => setPage("subjects")} >Subjects</button>
         <button className='but2' >Teachers</button>
-         <button className='but3' onClick={() => setPage("subscription")}>Subscripton</button>
+        <button className='but3' onClick={() => setPage("subscription")}>Subscripton</button>
         <button className='but4' onClick={() => setPage("login") }>Log in</button>
 
-         {page === "login" && <AuthPage />}
+
+      {page === "mainpage" && <App/> }
+      {page === "login" && <AuthPage />}
       {page === "subjects" && <SubjectApp />}
       {page === "subscription" && <SubscriptionApp />}
       </div>
     )
   }
 
+
+  function AppMainTxt(){
+    return(
+      <>
+      <div className='maint'>
+        Учете не зависимо то това къде сте.
+      </div> 
+      </>
+    )
+  }
 
 function MyList() {
   const [items, setItems] = useState([]);
@@ -48,24 +61,28 @@ function MyList() {
   );
 }
 
+
+
 function App() {
   const [count, setCount] = useState(0)
   const apiUrl = process.env.REACT_APP_API_URL + "/api/items"; 
 
 
 
-      function openSub(){
-         window.location.href = 'subject_page.jsx';
-          
         
-      }
+      
 
   
   return (
-    <div className='.dival'>         
+    <>
+    <div>         
       <NavBar/>
-      
-    </div>
+      </div>
+      <div>
+        <AppMainTxt />
+      </div>
+
+    </>
   )
 }
 
