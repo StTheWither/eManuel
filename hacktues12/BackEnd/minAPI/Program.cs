@@ -62,14 +62,40 @@ app.MapPost("/auth/register", (RegisterRequest req) =>
      //     System.Security.Cryptography.SHA256.HashData(Encoding.UTF8.GetBytes(req.Password))
      // );
 
+
+    //NE RABOTI(ZA MENTORA I KAT CQLO)
+
+
+    // ✅ ако всичко е ок
     var callingOrganizer = new CallingOrganizer();
-    var result = callingOrganizer.RegisterUser(req.Firstname, req.Lastname, req.Email, req.Pass, req.Role);
+    var result = callingOrganizer.RegisterUser(
+        req.Firstname,
+        req.Lastname,
+        req.Email,
+        req.Pass,
+        req.Role
+    );
+
+         // ✅ Firstname
+    if (string.IsNullOrWhiteSpace(req.Firstname) || !req.Firstname.All(char.IsLetter))
+        return Results.Ok(new RegisterResponse { IsSuccessfulRegistration = false });
+
+    // ✅ Password
+    if (string.IsNullOrWhiteSpace(req.Pass) || req.Pass.Length > 20)
+        return Results.Ok(new RegisterResponse { IsSuccessfulRegistration = false });
+
+    // ✅ Email
+    if (string.IsNullOrWhiteSpace(req.Email) || !req.Email.Contains("@"))
+        return Results.Ok(new RegisterResponse { IsSuccessfulRegistration = false });
 
     return Results.Ok(new RegisterResponse
     {
         IsSuccessfulRegistration = result
     });
 });
+
+//check for only-letters
+
 
 
 app.Run();
