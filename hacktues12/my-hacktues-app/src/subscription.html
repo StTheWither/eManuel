@@ -4,125 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Абонамент - EduCrave</title>
-    <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="navbar-container">
-            <div class="navbar-logo">
-                <img src="logo.svg" alt="EduCrave" class="logo-img">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">📚</span>
                 <span>EduCrave</span>
             </div>
-            <div class="navbar-buttons">
-                <a href="login.html" class="nav-btn">Вход</a>
-                <a href="signup.html" class="nav-btn">Регистрация</a>
-                <a href="subscription.html" class="nav-btn active">Абонамент</a>
-                <a href="home.html" class="nav-btn">Начало</a>
-                <a href="subjects.html" class="nav-btn">Предмети</a>
-                <a href="teachers.html" class="nav-btn">Учители</a>
-            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Начало</a></li>
+                <li><a href="subjects.html">Предмети</a></li>
+                <li><a href="teachers.html">Учители</a></li>
+                <li><a href="subscription.html" class="active">Абонамент</a></li>
+                <li><a href="login.html">Вход</a></li>
+            </ul>
         </div>
     </nav>
 
-    <div class="subscription-container">
-        <!-- Animated background -->
-        <div class="animated-bg">
-            <div class="blob blob-1"></div>
-            <div class="blob blob-2"></div>
-            <div class="blob blob-3"></div>
-        </div>
-
-        <!-- Header -->
-        <div class="subscription-header">
-            <div class="logo-large">📚</div>
+    <div class="page-header">
+        <div class="container">
             <h1>Избери своя план</h1>
-            <p>Отключи всичко с перфектния план за теб</p>
-            <p class="free-trial">✨ 7 дни безплатен период за всеки нов абонамент</p>
+            <p>✨ 7 дни безплатен период за всеки нов абонамент</p>
         </div>
+    </div>
 
-        <!-- Plans Grid -->
+    <div class="container">
         <div class="plans-grid">
-            <!-- 1 Month Plan -->
             <div class="plan-card">
                 <h3>1 Месец</h3>
                 <div class="plan-price">
                     <span class="amount">9.99</span>
                     <span class="currency">€</span>
                 </div>
-                <p class="plan-description">Идеално за нови потребители</p>
-                
-                <ul class="features-list">
+                <p class="plan-desc">Идеално за нови потребители</p>
+                <ul class="plan-features">
                     <li>✓ Достъп до 500+ курса</li>
                     <li>✓ Интерактивни упражнения</li>
                     <li>✓ Напредък проследяване</li>
                     <li>✓ Съобщество чат</li>
                 </ul>
-
-                <button class="btn btn-subscribe" data-plan="1month" data-price="9.99">
-                    Избери план
-                </button>
-                <p class="trial-text">+ 7 дни безплатно</p>
+                <p class="trial">+ 7 дни безплатно</p>
+                <button class="btn btn-primary full-width">Избери план</button>
             </div>
 
-            <!-- 3 Months Plan (Featured) -->
             <div class="plan-card featured">
-                <div class="plan-badge">ПРЕПОРЪЧАНО</div>
+                <div class="badge">ПРЕПОРЪЧАНО</div>
                 <h3>3 Месеца</h3>
                 <div class="plan-price">
                     <span class="amount">24.99</span>
                     <span class="currency">€</span>
                 </div>
-                <p class="plan-description">Най-популярният избор</p>
-                
-                <ul class="features-list">
+                <p class="plan-desc">Най-популярният избор</p>
+                <ul class="plan-features">
                     <li>✓ Достъп до 500+ курса</li>
                     <li>✓ Интерактивни упражнения</li>
                     <li>✓ Персонален коуч</li>
                     <li>✓ Сертификати</li>
                     <li>✓ Приоритетна поддръжка</li>
                 </ul>
-
-                <button class="btn btn-subscribe btn-primary" data-plan="3months" data-price="24.99">
-                    Избери план
-                </button>
-                <p class="trial-text">+ 7 дни безплатно</p>
+                <p class="trial">+ 7 дни безплатно</p>
+                <button class="btn btn-primary full-width">Избери план</button>
             </div>
 
-            <!-- 12 Months Plan -->
             <div class="plan-card">
-                <div class="plan-badge save-badge">СПЕСТИ 30%</div>
+                <div class="badge save">СПЕСТИ 30%</div>
                 <h3>12 Месеца</h3>
                 <div class="plan-price">
                     <span class="amount">83.99</span>
                     <span class="currency">€</span>
                 </div>
-                <p class="plan-description">Година перфектна стойност</p>
-                
-                <ul class="features-list">
+                <p class="plan-desc">Година перфектна стойност</p>
+                <ul class="plan-features">
                     <li>✓ Неограничени курси</li>
                     <li>✓ Експертни менторства</li>
                     <li>✓ 1-на-1 сесии</li>
                     <li>✓ Сертификати</li>
                     <li>✓ VIP поддръжка 24/7</li>
                 </ul>
-
-                <button class="btn btn-subscribe" data-plan="12months" data-price="83.99">
-                    Избери план
-                </button>
-                <p class="trial-text">+ 7 дни безплатно</p>
+                <p class="trial">+ 7 дни безплатно</p>
+                <button class="btn btn-primary full-width">Избери план</button>
             </div>
-        </div>
-
-        <!-- CTA Section -->
-        <div class="cta-section">
-            <h2>Готов ли си?</h2>
-            <p>Присъединяй се към хиляди учащи днес</p>
         </div>
     </div>
 
-    <script src="api.js"></script>
-    <script src="subscription.js"></script>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 EduCrave.</p>
+        </div>
+    </footer>
 </body>
 </html>
