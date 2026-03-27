@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import SubscriptionApp from './subscription_page'
+import AuthPage from './log_in_page'
+import SubjectAPP from './subject_page'
 import './subject_page.css'
 
 function NavBar(){
@@ -192,4 +192,4 @@ function SubjectAPP(){
     )
 }
 
-export default SubjectAPP
+export default SubjectAPP;
