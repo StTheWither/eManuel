@@ -23,159 +23,166 @@
         </div>
     </nav>
 
-    <div class="page-header">
-        <div class="container">
-            <h1>Наши учители</h1>
-            <p>Научи се от експертите</p>
-        </div>
-    </div>
+    <div class="teachers-page">
+        <aside class="chat-sidebar">
+            <div class="chat-sidebar-header">
+                <h2>Избрани учители</h2>
+            </div>
+            <div id="chatList" class="chat-list">
+                <p class="empty-note">Натисни "Избери" под учител, за да го добавиш тук.</p>
+            </div>
+        </aside>
 
-    
-
-        <div class="teachers-grid">
-            <div class="teacher-card">
-                <div class="teacher-avatar">👨‍🏫</div>
-                <h3>Иван Петров</h3>
-                <p class="teacher-subject">Математика</p>
-                <p class="teacher-city">📍 София</p>
-                <p class="teacher-rating">⭐⭐⭐⭐⭐ 4.9</p>
-                <div class="teacher-stats">
-                    <span>2,450 студенти</span>
-                    <span>245 отзива</span>
+        <main class="teachers-main">
+            <div class="page-header">
+                <div class="container">
+                    <h1>Наши учители</h1>
+                    <p>Научи се от експертите</p>
                 </div>
-                <p class="teacher-bio">Магистър по математика със 10 години опит</p>
-                <button class="btn btn-secondary" onclick="">Избери</button>
             </div>
 
-            <div class="teacher-card">
-                <div class="teacher-avatar">👩‍🏫</div>
-                <h3>Мария Василева</h3>
-                <p class="teacher-subject">Химия</p>
-                <p class="teacher-city">📍 Пловдив</p>
-                <p class="teacher-rating">⭐⭐⭐⭐ 4.8</p>
-                <div class="teacher-stats">
-                    <span>1,890 студенти</span>
-                    <span>198 отзива</span>
+            <div id="teacherList" class="teachers-grid">
+                <div class="teacher-card">
+                    <div class="teacher-avatar">👨‍🏫</div>
+                    <h3>Иван Петров</h3>
+                    <p class="teacher-subject">Математика</p>
+                    <p class="teacher-city">📍 София</p>
+                    <p class="teacher-rating">⭐⭐⭐⭐⭐ 4.9</p>
+                    <div class="teacher-stats">
+                        <span>2,450 студенти</span>
+                        <span>245 отзива</span>
+                    </div>
+                    <p class="teacher-bio">Магистър по математика със 10 години опит</p>
+                    <button class="btn btn-secondary select-teacher" type="button">Избери</button>
                 </div>
-                <p class="teacher-bio">Докторат по химия, специалист органична</p>
-                <button class="btn btn-secondary" onclick="">Избери</button>
-            </div>
 
-            <div class="teacher-card">
-                <div class="teacher-avatar">👨‍🏫</div>
-                <h3>Георги Стефанов</h3>
-                <p class="teacher-subject">Биология</p>
-                <p class="teacher-city">📍 Варна</p>
-                <p class="teacher-rating">⭐⭐⭐⭐ 4.7</p>
-                <div class="teacher-stats">
-                    <span>2,100 студенти</span>
-                    <span>156 отзива</span>
+                <div class="teacher-card">
+                    <div class="teacher-avatar">👩‍🏫</div>
+                    <h3>Мария Василева</h3>
+                    <p class="teacher-subject">Химия</p>
+                    <p class="teacher-city">📍 Пловдив</p>
+                    <p class="teacher-rating">⭐⭐⭐⭐ 4.8</p>
+                    <div class="teacher-stats">
+                        <span>1,890 студенти</span>
+                        <span>198 отзива</span>
+                    </div>
+                    <p class="teacher-bio">Докторат по химия, специалист органична</p>
+                    <button class="btn btn-secondary select-teacher" type="button">Избери</button>
                 </div>
-                <p class="teacher-bio">Специалист по молекулярна биология</p>
-                <button class="btn btn-secondary" onclick="">Избери</button>
-            </div>
 
-            <div class="teacher-card">
-                <div class="teacher-avatar">👨‍🏫</div>
-                <h3>Георги Иванов</h3>
-                <p class="teacher-subject">Български език</p>
-                <p class="teacher-city">📍 София</p>
-                <p class="teacher-rating">⭐⭐⭐⭐ 4.8</p>
-                <div class="teacher-stats">
-                    <span>1,750 студенти</span>
-                    <span>180 отзива</span>
+                <div class="teacher-card">
+                    <div class="teacher-avatar">👨‍🏫</div>
+                    <h3>Георги Стефанов</h3>
+                    <p class="teacher-subject">Биология</p>
+                    <p class="teacher-city">📍 Варна</p>
+                    <p class="teacher-rating">⭐⭐⭐⭐ 4.7</p>
+                    <div class="teacher-stats">
+                        <span>2,100 студенти</span>
+                        <span>156 отзива</span>
+                    </div>
+                    <p class="teacher-bio">Специалист по молекулярна биология</p>
+                    <button class="btn btn-secondary select-teacher" type="button">Избери</button>
                 </div>
-                <p class="teacher-bio">Специалист по Българска възрожденска литература </p>
-                <button class="btn btn-secondary" onclick="">Избери</button>
-            </div>
 
-            <div class="teacher-card">
-                <div class="teacher-avatar">👩‍🏫</div>
-                <h3>Ева Николова</h3>
-                <p class="teacher-subject">География</p>
-                <p class="teacher-city">📍 Бургас</p>
-                <p class="teacher-rating">⭐⭐⭐⭐⭐ 4.9</p>
-                <div class="teacher-stats">
-                    <span>1,650 студенти</span>
-                    <span>189 отзива</span>
+                <div class="teacher-card">
+                    <div class="teacher-avatar">👨‍🏫</div>
+                    <h3>Георги Иванов</h3>
+                    <p class="teacher-subject">Български език</p>
+                    <p class="teacher-city">📍 София</p>
+                    <p class="teacher-rating">⭐⭐⭐⭐ 4.8</p>
+                    <div class="teacher-stats">
+                        <span>1,750 студенти</span>
+                        <span>180 отзива</span>
+                    </div>
+                    <p class="teacher-bio">Специалист по Българска възрожденска литература</p>
+                    <button class="btn btn-secondary select-teacher" type="button">Избери</button>
                 </div>
-                <p class="teacher-bio">Магистър по география, пътешественик</p>
-                <button class="btn btn-secondary" onclick="">Избери</button>
-            </div>
 
-            <div class="teacher-card">
-                <div class="teacher-avatar">👨‍🏫</div>
-                <h3>Никола Томов</h3>
-                <p class="teacher-subject">История</p>
-                <p class="teacher-city">📍 Велико Търново</p>
-                <p class="teacher-rating">⭐⭐⭐⭐ 4.8</p>
-                <div class="teacher-stats">
-                    <span>1,980 студенти</span>
-                    <span>212 отзива</span>
+                <div class="teacher-card">
+                    <div class="teacher-avatar">👩‍🏫</div>
+                    <h3>Ева Николова</h3>
+                    <p class="teacher-subject">География</p>
+                    <p class="teacher-city">📍 Бургас</p>
+                    <p class="teacher-rating">⭐⭐⭐⭐⭐ 4.9</p>
+                    <div class="teacher-stats">
+                        <span>1,650 студенти</span>
+                        <span>189 отзива</span>
+                    </div>
+                    <p class="teacher-bio">Магистър по география, пътешественик</p>
+                    <button class="btn btn-secondary select-teacher" type="button">Избери</button>
                 </div>
-                <p class="teacher-bio">Историк с PhD, 15 години преподаване</p>
-                <button class="btn btn-secondary" onclick="">Избери</button>
-            </div>
 
-            
-            
-            <div class="teacher-card">
-                <div class="teacher-avatar">👨‍🏫</div>
-                <h3>Милена Кръстева</h3>
-                <p class="teacher-subject">Български език</p>
-                <p class="teacher-city">📍 Велико Търново</p>
-                <p class="teacher-rating">⭐⭐⭐⭐ 4.7</p>
-                <div class="teacher-stats">
-                    <span>1,870 студенти</span>
-                    <span>315 отзива</span>
+                <div class="teacher-card">
+                    <div class="teacher-avatar">👨‍🏫</div>
+                    <h3>Никола Томов</h3>
+                    <p class="teacher-subject">История</p>
+                    <p class="teacher-city">📍 Велико Търново</p>
+                    <p class="teacher-rating">⭐⭐⭐⭐ 4.8</p>
+                    <div class="teacher-stats">
+                        <span>1,980 студенти</span>
+                        <span>212 отзива</span>
+                    </div>
+                    <p class="teacher-bio">Историк с PhD, 15 години преподаване</p>
+                    <button class="btn btn-secondary select-teacher" type="button">Избери</button>
                 </div>
-                <p class="teacher-bio">Лингвист и специалист в сферата на литературата</p>
-                <button class="btn btn-secondary" onclick="">Избери</button>
-            </div>
 
-            <div class="teacher-card">
-                <div class="teacher-avatar">👩‍🏫</div>
-                <h3>София Борисова</h3>
-                <p class="teacher-subject">Изобразително изкуство</p>
-                <p class="teacher-city">📍 София</p>
-                <p class="teacher-rating">⭐⭐⭐⭐⭐ 4.9</p>
-                <div class="teacher-stats">
-                    <span>1,420 студенти</span>
-                    <span>167 отзива</span>
+                <div class="teacher-card">
+                    <div class="teacher-avatar">👨‍🏫</div>
+                    <h3>Милена Кръстева</h3>
+                    <p class="teacher-subject">Български език</p>
+                    <p class="teacher-city">📍 Велико Търново</p>
+                    <p class="teacher-rating">⭐⭐⭐⭐ 4.7</p>
+                    <div class="teacher-stats">
+                        <span>1,870 студенти</span>
+                        <span>315 отзива</span>
+                    </div>
+                    <p class="teacher-bio">Лингвист и специалист в сферата на литературата</p>
+                    <button class="btn btn-secondary select-teacher" type="button">Избери</button>
                 </div>
-                <p class="teacher-bio">Професионална художничка и дизайнерка</p>
-                <button class="btn btn-secondary" onclick="">Избери</button>
-            </div>
 
-            <div class="teacher-card">
-                <div class="teacher-avatar">👨‍🏫</div>
-                <h3>Александър Иванов</h3>
-                <p class="teacher-subject">Физика</p>
-                <p class="teacher-city">📍 Русе</p>
-                <p class="teacher-rating">⭐⭐⭐⭐ 4.7</p>
-                <div class="teacher-stats">
-                    <span>1,750 студенти</span>
-                    <span>134 отзива</span>
+                <div class="teacher-card">
+                    <div class="teacher-avatar">👩‍🏫</div>
+                    <h3>София Борисова</h3>
+                    <p class="teacher-subject">Изобразително изкуство</p>
+                    <p class="teacher-city">📍 София</p>
+                    <p class="teacher-rating">⭐⭐⭐⭐⭐ 4.9</p>
+                    <div class="teacher-stats">
+                        <span>1,420 студенти</span>
+                        <span>167 отзива</span>
+                    </div>
+                    <p class="teacher-bio">Професионална художничка и дизайнерка</p>
+                    <button class="btn btn-secondary select-teacher" type="button">Избери</button>
                 </div>
-                <p class="teacher-bio">Магистър по физика, квантова механика</p>
-                <button class="btn btn-secondary" onclick="">Избери</button>
-            </div>
 
-
-            <div class="teacher-card">
-                <div class="teacher-avatar">👩‍🏫</div>
-                <h3>Елизабета Кръстева</h3>
-                <p class="teacher-subject">Английски език</p>
-                <p class="teacher-city">📍 София</p>
-                <p class="teacher-rating">⭐⭐⭐⭐⭐ 4.9</p>
-                <div class="teacher-stats">
-                    <span>2,320 студенти</span>
-                    <span>289 отзива</span>
+                <div class="teacher-card">
+                    <div class="teacher-avatar">👨‍🏫</div>
+                    <h3>Александър Иванов</h3>
+                    <p class="teacher-subject">Физика</p>
+                    <p class="teacher-city">📍 Русе</p>
+                    <p class="teacher-rating">⭐⭐⭐⭐ 4.7</p>
+                    <div class="teacher-stats">
+                        <span>1,750 студенти</span>
+                        <span>134 отзива</span>
+                    </div>
+                    <p class="teacher-bio">Магистър по физика, квантова механика</p>
+                    <button class="btn btn-secondary select-teacher" type="button">Избери</button>
                 </div>
-                <p class="teacher-bio">Лингвист, опитна преподавателка</p>
-                <button class="btn btn-secondary" onclick="">Избери</button>
+
+                <div class="teacher-card">
+                    <div class="teacher-avatar">👩‍🏫</div>
+                    <h3>Елизабета Кръстева</h3>
+                    <p class="teacher-subject">Английски език</p>
+                    <p class="teacher-city">📍 София</p>
+                    <p class="teacher-rating">⭐⭐⭐⭐⭐ 4.9</p>
+                    <div class="teacher-stats">
+                        <span>2,320 студенти</span>
+                        <span>289 отзива</span>
+                    </div>
+                    <p class="teacher-bio">Лингвист, опитна преподавателка</p>
+                    <button class="btn btn-secondary select-teacher" type="button">Избери</button>
+                </div>
             </div>
-        </div>
+        </main>
     </div>
 
     <footer class="footer">
@@ -183,5 +190,7 @@
             <p>&copy; 2026 YearnToLearn.</p>
         </div>
     </footer>
+
+    <script src="./app.js"></script>
 </body>
 </html>
