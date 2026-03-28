@@ -5,6 +5,15 @@ namespace SQLlibrary
 {
     public class MessageOrganizer
     {
+
+         public List<Message> GetMessagesForReceiver(Guid receiverId)
+        {
+            using var context = new AppDbContext();
+            return context.Set<Message>()
+                .Where(m => m.ReceiverId == receiverId)
+                .ToList();
+        }
+
         public MessageOrganizer()
         {
         }

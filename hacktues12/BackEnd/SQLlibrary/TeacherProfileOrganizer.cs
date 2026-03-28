@@ -5,8 +5,16 @@ namespace SQLlibrary
 {
     public class TeacherProfileOrganizer
     {
-        public TeacherProfileOrganizer()
+        public List<TeacherProfiles> GetAllTeacherProfiles()
         {
+            var repository = new TeacherProfilesRepository();
+            return repository.GetAllTeacherProfiles();
+        }
+
+        public TeacherProfiles? GetTeacherProfileById(Guid id)
+        {
+            var repository = new TeacherProfilesRepository();
+            return repository.GetTeacherProfileByTeacherId(id);
         }
 
         public bool RegisterTeacherProfile(string subject, string city, string teachingMode, string description, decimal pricePerHour, string grades, string firstName, string lastName)

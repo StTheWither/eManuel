@@ -6,6 +6,13 @@ namespace SQLlibrary
 {
     public class StudentProfilesRepository
     {
+
+        public StudentProfiles? GetStudentProfileById(Guid id)
+        {
+            var repository = new StudentProfilesRepository();
+            return repository.GetStudentProfileById(id);
+        }
+
         public void AddStudentProfile(StudentProfiles profile)
         {
             using var db = new AppDbContext();

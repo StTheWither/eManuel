@@ -27,6 +27,14 @@ namespace SQLlibrary
                 .ToList();
         }
 
+        public IEnumerable<Message> GetMessagesForReceiver(Guid receiverId)
+        {
+            using var context = new AppDbContext();
+            return context.Set<Message>()
+                .Where(m => m.ReceiverId == receiverId)
+                .ToList();
+        }   
+
         public List<Message> GetMessagesForUser(Guid userId)
         {
             using var db = new AppDbContext();

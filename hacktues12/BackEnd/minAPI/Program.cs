@@ -293,4 +293,44 @@ app.MapPost("/message/send", (JsonElement req) =>
         );
     }
 });
+
+app.MapGet("/teachers", () =>
+{
+    var organizer = new TeacherProfileOrganizer();
+    var teachers = organizer.GetAllTeacherProfiles();
+    return Results.Ok(teachers);
+});
+
+app.MapGet("/teachers/{id:guid}", (Guid id) =>
+{
+    var organizer = new TeacherProfileOrganizer();
+    var teacher = organizer.GetTeacherProfileById(id);
+    return teacher is null
+        ? Results.NotFound(new { Message = "Teacher not found" })
+        : Results.Ok(teacher);
+});
+
+app.MapGet("/students", () =>
+{
+    var organizer = new StudentProfileOrganizer();
+    var students = organizer.GetAllStudentProfiles();
+    return Results.Ok(students);
+});
+
+app.MapGet("/students/{id:guid}", (Guid id) =>
+{
+    var organizer = new StudentProfileOrganizer();
+    var student = organizer.GetStudentProfileById(id);
+    return student is null
+        ? Results.NotFound(new { Message = "Student not found" })
+        : Results.Ok(student);
+});
+
+app.MapGet("/messages/{receiverId:guid}", (Guid receiverId) =>
+{
+    var organizer = new MessageOrganizer();
+    var messages = organizer.GetMessagesForReceiver(receiverId);
+    return Results.Ok(messages);
+});
+
 app.Run();

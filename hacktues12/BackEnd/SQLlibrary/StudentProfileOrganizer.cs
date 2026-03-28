@@ -5,6 +5,19 @@ namespace SQLlibrary
 {
     public class StudentProfileOrganizer
     {
+
+        public List<StudentProfiles> GetAllStudentProfiles()
+        {
+            var repository = new StudentProfilesRepository();
+            return repository.GetAllStudentProfiles();
+        }
+
+        public StudentProfiles? GetStudentProfileById(Guid id)
+        {
+            var repository = new StudentProfilesRepository();
+            return repository.GetStudentProfileByStudentId(id);
+        }   
+        
         public StudentProfileOrganizer()
         {
         }
