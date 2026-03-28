@@ -28,7 +28,9 @@
             <h1>Регистрация</h1>
             <p class="subtitle">Създай нов акаунт</p>
 
-            <form action="https://localhost:5000/auth/register" method="POST" class="form">
+            <div id="messageBox" class="form-message"></div>
+
+            <form id="signupForm" class="form">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="firstname">Име:</label>
@@ -68,7 +70,7 @@
                     <input 
                         type="tel" 
                         id="phone" 
-                        name="phonenumber" 
+                        name="phone" 
                         placeholder="+359..."
                         required
                     >
@@ -79,7 +81,7 @@
                     <input 
                         type="password" 
                         id="password" 
-                        name="pass" 
+                        name="password" 
                         placeholder="Минимум 8 символа"
                         required
                     >
@@ -107,5 +109,7 @@
             <p>&copy; 2026 YearnToLearn.</p>
         </div>
     </footer>
+
+    <script src="./app.js"></script>
 </body>
 </html>
