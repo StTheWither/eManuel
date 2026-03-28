@@ -1,13 +1,25 @@
-const apiBase = 'http://localhost:5000';
+const apiBase = 'http://localhost:5096';
 
 async function jsonRequest(url, options = {}) {
-  const response = await fetch(url, {
-    headers: { 'Content-Type': 'application/json', ...(options.headers || {}) },
-    ...options
-  });
+  try {
+    const response = await fetch(url, {
+      headers: { 'Content-Type': 'application/json', ...(options.headers || {}) },
+      ...options
+    });
 
-  const data = await response.json();
-  return { ok: response.ok, status: response.status, data };
+    const text = await response.text();
+    let data = null;
+    try { data = text ? JSON.parse(text) : null; } catch {}
+
+    return {
+      ok: response.ok,
+      status: response.status,
+      data,
+      error: response.ok ? null : (data?.message || text || 'Грешка в заявката')
+    };
+  } catch (ex) {
+    return { ok: false, status: 0, data: null, error: ex.message };
+  }
 }
 
 async function registerUser(user) {
@@ -15,31 +27,6 @@ async function registerUser(user) {
     method: 'POST',
     body: JSON.stringify(user)
   });
-}
-
-async function loginUser(email, password) {
-  return jsonRequest(`${apiBase}/auth/login`, {
-    method: 'POST',
-    body: JSON.stringify({ email, password })
-  });
-}
-
-async function createTeacherProfile(profile) {
-  return jsonRequest(`${apiBase}/teacher/profile`, {
-    method: 'POST',
-    body: JSON.stringify(profile)
-  });
-}
-
-async function createStudentProfile(profile) {
-  return jsonRequest(`${apiBase}/student/profile`, {
-    method: 'POST',
-    body: JSON.stringify(profile)
-  });
-}
-
-async function fetchTeachers() {
-  return jsonRequest(`${apiBase}/teachers`);
 }
 
 function showMessage(message, isError = false) {
@@ -50,21 +37,6 @@ function showMessage(message, isError = false) {
   } else {
     alert(message);
   }
-}
-
-function renderTeachers(teachers) {
-  const container = document.querySelector('#teacherList');
-  if (!container) return;
-
-  container.innerHTML = teachers.map(t => `
-    <div class="teacher-card">
-      <h3>${t.firstName || t.firstname || ''} ${t.lastName || t.lastname || ''}</h3>
-      <p>Предмет: ${t.subject || ''}</p>
-      <p>Град: ${t.city || ''}</p>
-      <p>Начин: ${t.teachingMode || ''}</p>
-      <p>Цена: ${t.pricePerHour || ''}</p>
-    </div>
-  `).join('');
 }
 
 function initForms() {
@@ -84,6 +56,7 @@ function initForms() {
       };
 
       const result = await registerUser(user);
+      console.log('register result', result);
 
       if (result.ok) {
         localStorage.setItem('pageMessage', 'Регистрацията е успешна!');
@@ -92,45 +65,9 @@ function initForms() {
         return;
       }
 
-      showMessage(result.data?.message || 'Грешка при регистрация', true);
-    });
-  }
-
-  const loginForm = document.querySelector('#loginForm');
-  if (loginForm) {
-    loginForm.addEventListener('submit', async event => {
-      event.preventDefault();
-      const form = event.currentTarget;
-
-      const result = await loginUser(form.email.value, form.password.value);
-
-      if (result.ok && result.data?.isSuccessfulLogin) {
-        localStorage.setItem('userEmail', form.email.value);
-        window.location.href = 'teachers.html';
-      } else {
-        showMessage(result.data?.message || 'Грешка при вход', true);
-      }
+      showMessage(result.error || 'Грешка при регистрация', true);
     });
   }
 }
 
-async function initPage() {
-  initForms();
-
-  const savedMessage = localStorage.getItem('pageMessage');
-  if (savedMessage) {
-    const messageType = localStorage.getItem('pageMessageType');
-    showMessage(savedMessage, messageType !== 'success');
-    localStorage.removeItem('pageMessage');
-    localStorage.removeItem('pageMessageType');
-  }
-
-  const teacherList = document.querySelector('#teacherList');
-  if (teacherList) {
-    const response = await fetchTeachers();
-    if (response.ok) renderTeachers(response.data || []);
-    else showMessage('Не може да се заредят учителите', true);
-  }
-}
-
-document.addEventListener('DOMContentLoaded', initPage);
+document.addEventListener('DOMContentLoaded', initForms);
